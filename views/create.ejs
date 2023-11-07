@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Welcome to My Blog</h1>
+    <ul>
+        <% blogPosts.forEach(post => { %>
+            <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+        <% }); %>
+    </ul>
+</body>
+</html>
