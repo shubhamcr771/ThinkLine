@@ -6,9 +6,12 @@
 </head>
 <body>
     <h1>Welcome to My Blog</h1>
+    <a href="/create"><button>Create New Post</button></a> <!-- Add a button to create a new post -->
     <ul>
         <% blogPosts.forEach(post => { %>
-            <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+            <li><a href="/posts/<%= post.id %>"><%= post.title %></a> 
+                <a href="/posts/<%= post.id %>/edit"><button>Edit</button></a> <!-- Add a button to edit each post -->
+            </li>
         <% }); %>
     </ul>
 </body>

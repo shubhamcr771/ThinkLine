@@ -16,6 +16,8 @@ app.get('/', (req, res) => {
 
 // Add more routes for creating, editing, and deleting posts
 
+// Creating a specific post
+
 app.get('/create', (req, res) => {
     res.render('create');
 });
@@ -26,6 +28,51 @@ app.post('/create', (req, res) => {
     blogPosts.push(newPost);
     res.redirect('/');
 });
+
+
+
+// Edit a specific post
+app.get('/posts/:id/edit', (req, res) => {
+    const postId = parseInt(req.params.id);
+    const postToEdit = blogPosts.find(post => post.id === postId);
+
+    if (!postToEdit) {
+        res.redirect('/');
+    } else {
+        res.render('edit', { post: postToEdit });
+    }
+});
+
+app.post('/posts/:id/edit', (req, res) => {
+    const postId = parseInt(req.params.id);
+    const postToEdit = blogPosts.find(post => post.id === postId);
+
+    if (!postToEdit) {
+        res.redirect('/');
+    } else {
+        const { title, content } = req.body;
+        // Update the post with the new data
+        postToEdit.title = title;
+        postToEdit.content = content;
+        res.redirect('/');
+    }
+});
+
+// Delete a specific post
+app.get('/posts/:id/delete', (req, res) => {
+    const postId = parseInt(req.params.id);
+    const postIndex = blogPosts.findIndex(post => post.id === postId);
+
+    if (postIndex === -1) {
+        res.redirect('/');
+    } else {
+        // Remove the post from the array
+        blogPosts.splice(postIndex, 1);
+        res.redirect('/');
+    }
+});
+
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
