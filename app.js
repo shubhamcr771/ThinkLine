@@ -75,6 +75,18 @@ app.get('/posts/:id/delete', (req, res) => {
     }
 });
 
+// View a specific post
+app.get('/posts/:id', (req, res) => {
+    const postId = parseInt(req.params.id);
+    const postToView = blogPosts.find(post => post.id === postId);
+
+    if (!postToView) {
+        res.redirect('/');
+    } else {
+        res.render('view', { post: postToView });
+    }
+});
+
 
 
 app.listen(port, () => {
