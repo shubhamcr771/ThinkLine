@@ -12,7 +12,7 @@
   </head>
   <body>
 <!-- NAVBAR -->
-    <div class="">
+    <div>
       <header
         class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
       >
@@ -26,6 +26,20 @@
     </div>
 
 <!-- HERO -->
+<div  class="px-4  pt-5 my-5 text-center border-bottom">
+  <h1 class="display-4 fw-bold text-body-emphasis">ThinkLine: Publish <br> your thoughts</h1>
+  <div class="col-lg-6 mx-auto">
+    <h2 class="lead fw-bold mb-4">write with passion....</h2>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <a href="/create"><button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Create Your Blog</button></a>
+    </div>
+  </div>
+  <div class="overflow-hidden" style="max-height: 30vh;">
+    <div class="container px-5">
+      <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+    </div>
+  </div>
+</div>
 
 
 
@@ -33,12 +47,6 @@
 
     
     <!-- //original -->
-
-    <h1>Welcome to My Blog</h1>
-    <a href="/create" class=""
-      ><button class="btn btn-success h-10">Create New Post</button></a
-    >
-    <!-- Add a button to create a new post -->
     <ul>
       <% blogPosts.forEach(post => { %>
       <li>
