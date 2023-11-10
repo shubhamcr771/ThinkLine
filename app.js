@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
     res.render('home', { blogPosts });
 });
 
+
 // Add more routes for creating, editing, and deleting posts
 
 // Creating a specific post
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 app.get('/create', (req, res) => {
     res.render('create');
 });
+
 
 app.post('/create', (req, res) => {
     const { title, content } = req.body;
