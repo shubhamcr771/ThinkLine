@@ -26,8 +26,8 @@
     </div>
 
 <!-- HERO -->
-<div  class="px-4  pt-5 my-5 text-center border-bottom">
-  <h1 class="display-4 fw-bold text-body-emphasis">ThinkLine: Publish <br> <span class="fw-semibold">your thoughts</span></h1>
+<div  class="px-4  pt-5 my-5 text-center border-bottom  ">
+  <h1 class="display-4 fw-bold btn-dark text-body-emphasis">ThinkLine: Publish <br> <span class="fw-semibold">your thoughts</span></h1>
   <div class="col-lg-6 mx-auto">
     <h2 class="lead fw-bold mb-4 font-monospace">write with passion....</h2>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
@@ -36,7 +36,7 @@
   </div>
   <div class="overflow-hidden" style="max-height: 30vh;">
     <div class="container px-5">
-      <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      <img src="Untitled design.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
     </div>
   </div>
 </div>
@@ -50,7 +50,7 @@
     <ul>
       <% blogPosts.forEach(post => { %>
       <li>
-        <a href="/posts/<%= post.id %>"><%= post.title %></a>
+        <a class="fw-bold " href="/posts/<%= post.id %>"><%= post.title %></a>
         <a href="/posts/<%= post.id %>/edit"><button>Edit</button></a>
         <a href="/posts/<%= post.id %>/delete"><button>Delete</button></a>
         <!-- Add a Delete button -->
