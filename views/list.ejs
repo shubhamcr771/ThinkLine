@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog List</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
+    <h1>Blog List</h1>
     <ul>
         <% blogPosts.forEach(post => { %>
-        <li>
-          <a class="fw-bold " href="/posts/<%= post.id %>"><%= post.title %></a>
-          <a href="/posts/<%= post.id %>/edit"><button>Edit</button></a>
-          <a href="/posts/<%= post.id %>/delete"><button>Delete</button></a>
-          <!-- Add a Delete button -->
-        </li>
+            <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
         <% }); %>
-      </ul>
+    </ul>
 </body>
 </html>

@@ -13,9 +13,15 @@ const blogPosts = [];
 
 
 // Routes
+
 app.get('/', (req, res) => {
-    res.render('home', { blogPosts });
+    res.render('home' );
 });
+app.get('/list', (req, res) => {
+    res.render('list', { blogPosts });
+});
+
+
 
 
 // Add more routes for creating, editing, and deleting posts
@@ -31,7 +37,7 @@ app.post('/create', (req, res) => {
     const { title, content } = req.body;
     const newPost = { id: Date.now(), title, content };
     blogPosts.push(newPost);
-    res.redirect('/');
+    res.redirect('/list');
 });
 
 
