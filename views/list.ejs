@@ -9,9 +9,14 @@
 <body>
     <h1>Blog List</h1>
     <ul>
-        <% blogPosts.forEach(post => { %>
-            <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
-        <% }); %>
+      <% blogPosts.forEach(post => { %>
+      <li>
+        <a class="fw-bold " href="/posts/<%= post.id %>"><%= post.title %></a>
+        <a href="/posts/<%= post.id %>/edit"><button>Edit</button></a>
+        <a href="/posts/<%= post.id %>/delete"><button>Delete</button></a>
+        <!-- Add a Delete button -->
+      </li>
+      <% }); %>
     </ul>
 </body>
 </html>

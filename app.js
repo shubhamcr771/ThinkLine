@@ -15,7 +15,7 @@ const blogPosts = [];
 // Routes
 
 app.get('/', (req, res) => {
-    res.render('home' );
+    res.render('home', { blogPosts } );
 });
 app.get('/list', (req, res) => {
     res.render('list', { blogPosts });
